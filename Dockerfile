@@ -41,6 +41,9 @@ RUN mkdir /etc/service/turnserver
 ADD turnserver.sh /etc/service/turnserver/run
 RUN chmod a+x /etc/service/turnserver/run
 
+RUN mkdir /etc/service/turnutils
+ADD turnutils.sh /etc/service/turnutils/run
+RUN chmod a+x /etc/service/turnutils/run
 
 ONBUILD COPY requirements.txt /root/.
 ONBUILD RUN cd /root && pip3 install -r requirements.txt
